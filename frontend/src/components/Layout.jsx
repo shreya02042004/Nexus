@@ -10,7 +10,8 @@ import {
     Calendar,
     Menu,
     X,
-    UserPlus
+    UserPlus,
+    Command
 } from 'lucide-react';
 import CommandPalette from './CommandPalette';
 
@@ -89,7 +90,7 @@ const Layout = ({ children }) => {
                             </div>
                         </div>
                         <button
-                            onClick={handleLogout}
+                            onClick={logout}
                             className="w-full flex items-center gap-2 px-2 py-2 text-sm text-txt-muted hover:text-red-400 transition-colors"
                         >
                             <LogOut className="w-4 h-4" />
