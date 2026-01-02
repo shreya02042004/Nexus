@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default Dark (Zen Pro) */
+    --zen-bg: #0B0B0B;
+    --zen-surface: #121212;
+    --zen-subtle: #1A1A1A;
+    --zen-border: #262626;
+    --txt-main: #FFFFFF;
+    --txt-muted: #A1A1AA;
+    --txt-dim: #52525B;
+  }
+
+  [data-theme='light'] {
+    --zen-bg: #FFFFFF;
+    --zen-surface: #F8FAFC;
+    --zen-subtle: #F1F5F9;
+    --zen-border: #E2E8F0;
+    --txt-main: #0F172A;
+    --txt-muted: #64748B;
+    --txt-dim: #94A3B8;
+  }
+
+  [data-theme='midnight'] {
+    --zen-bg: #020617;
+    --zen-surface: #0f172a;
+    --zen-subtle: #1e293b;
+    --zen-border: #1e293b;
+    --txt-main: #f8fafc;
+    --txt-muted: #94a3b8;
+    --txt-dim: #64748b;
+  }
+
+  body {
+    @apply bg-zen-bg text-txt-main;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+@layer components {
+
+  /* Pro Tool "Slab" - The main container unit */
+  .slab {
+    @apply bg-zen-surface border border-zen-border rounded shadow-sm hover:border-zinc-700 transition-colors duration-200;
+  }
+
+  /* Minimalist Input */
+  .input-zen {
+    @apply w-full bg-zen-subtle border border-zen-border rounded px-3 py-2 text-sm text-txt-main placeholder-txt-dim focus:outline-none focus:border-txt-muted focus:ring-1 focus:ring-txt-muted transition-all;
+  }
+
+  /* Pro Button */
+  .btn-zen {
+    @apply px-4 py-2 rounded text-sm font-medium transition-all duration-200 flex items-center gap-2 justify-center;
+  }
+
+  .btn-zen-primary {
+    @apply bg-txt-main text-black hover:bg-gray-200;
+  }
+
+  .btn-zen-secondary {
+    @apply bg-transparent border border-zen-border text-txt-muted hover:text-txt-main hover:border-txt-muted;
+  }
+
+  .btn-zen-ghost {
+    @apply text-txt-muted hover:text-txt-main hover:bg-zen-subtle;
+  }
+
+  /* Status Badges */
+  .badge {
+    @apply px-2 py-0.5 rounded text-xs font-mono border;
+  }
+
+  .badge-todo {
+    @apply border-zinc-700 text-zinc-400 bg-zinc-900/50;
+  }
+
+  .badge-progress {
+    @apply border-indigo-900 text-indigo-400 bg-indigo-950/30;
+  }
+
+  .badge-done {
+    @apply border-emerald-900 text-emerald-400 bg-emerald-950/30;
+  }
+}
