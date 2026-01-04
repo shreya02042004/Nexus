@@ -765,7 +765,7 @@ JWT_SECRET=your-secret-key
 
 ## 📝 License
 
-MIT © Ayush
+MIT © Shreya
 
 ---
 
